@@ -1,1 +1,2 @@
-# balanced-body-mind.github.io
+Balanced body and mind
+
