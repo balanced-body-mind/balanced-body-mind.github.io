@@ -202,7 +202,7 @@ section.recent-posts {
     display: inline-block;
 }
 
-.post-top-meta .author-description {
+.post-top-meta .author-bio {
     margin-bottom: 5px;
     margin-top: 5px;
     font-size: 0.95rem;
@@ -634,7 +634,7 @@ ul.tags li a:hover {
     float: none;
 }
 
-.authorpage .author-description {
+.authorpage .author-bio {
     font-size: 1rem;
     color: rgba(0, 0, 0, .6);
 }
@@ -1049,20 +1049,39 @@ div.a2a_full_footer {
     }
 
     .jumbotron-home h1 {
-        font-family: Georgia,Times,"Times New Roman",serif;
+        font-family: Georgia, Times, "Times New Roman", serif;
         font-size: 2.4rem;
         font-weight: 700;
         line-height: 1.1;
     }
-    
-}
 
+}
 
 .bg-lightblue {
     background-color: #e8f3ec !important;
 }
 
 .tofront {
-	position:relative;
-	z-index:1;
+    position: relative;
+    z-index: 1;
+}
+
+a.text-dark:hover {
+    color: #03a87c !important;
+}
+
+.homefirstpage .main-loop .main-loop-card:nth-child(-n+5) {
+    display: none !important;
+}
+
+.spanborder {
+    border-bottom: 1px solid #e8f3ec;
+    margin-bottom: 2rem;
+}
+
+.spanborder span {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.44);
+    display: inline-block;
+    padding-bottom: 20px;
+    margin-bottom: -1px;
 }

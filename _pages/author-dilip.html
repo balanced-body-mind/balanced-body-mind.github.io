@@ -1,0 +1,35 @@
+---
+title: "Dilip"
+layout: default
+permalink: "/author-dilip.html"
+---
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-9">
+                    <h2 class="font-weight-bold">{{page.title}} <span
+                            class="small btn btn-outline-success btn-sm btn-round"><a
+                                href="{{ site.authors.dilip.twitter }}">Follow</a></span></h2>
+                    <p><a href="{{ site.authors.dilip.site }}">{{ site.authors.dilip.site }}</a></p>
+                    <p class="excerpt">{{ site.authors.dilip.bio }}</p>
+                </div>
+                <div class="col-md-3 text-right">
+                    {% if site.authors.dilip.avatar %}
+                    <img src="{{site.baseurl}}/{{ site.authors.dilip.avatar }}" alt="{{ site.authors.dilip.name }}"
+                        class="rounded-circle" height="100" width="100">
+                    {% else %}
+                    <img src="https://www.gravatar.com/avatar/{{ site.authors.dilip.gravatar }}?s=250&d=mm&r=x"
+                        alt="{{ site.authors.dilip.name }}" class="rounded-circle" height="100" width="100">
+                    {% endif %}
+                </div>
+            </div>
+            <h4 class="font-weight-bold spanborder"><span>Posts by {{page.title}}</span></h4>
+            {% assign posts = site.posts | where:"author","dilip" %}
+            {% for post in posts %}
+            {% include author-postbox.html %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
