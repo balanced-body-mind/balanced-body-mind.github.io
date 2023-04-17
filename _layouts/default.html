@@ -31,6 +31,36 @@
 
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init('1rwp9b3luDWbA63IL');
+    })();
+</script>
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = Math.random() * 100000 | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm('service_ijlpw8l', 'template_lmhjgtj', this)
+                .then(function () {
+                    console.log('SUCCESS!');
+                }, function (error) {
+                    console.log('FAILED...', error);
+                });
+        });
+    }
+
+    function enableBtn() {
+        document.getElementById("contact-form-btn").disabled = false;
+    }
+</script>
+
 </head>
 
 
@@ -75,6 +105,10 @@
 
                 <li class="nav-item">
                 <a class="nav-link" href="{{ site.baseurl }}/about"><i class="fas fa-user-alt"></i> About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/contact.html">Contact</a>
                 </li>
 
                 {% include search-lunr.html %}
