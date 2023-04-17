@@ -144,7 +144,7 @@ title: Home
 
     <div class="row listrecent">
 
-        {% for post in site.posts offset:offset %}
+        {% for post in paginator.posts %}
 
         {% include postbox.html %}
 
